@@ -39,10 +39,10 @@ Cada script contém **documentação detalhada no próprio código**, incluindo:
 
 Atualmente o repositório possui **11 scripts**, incluindo:
 
-- scanner_portas.sh
-- monitor_interfaces.sh
-- diagnostico_rede.sh
-- auditoria_switches.sh
+- ap-scan.sh
+- latency-monitor.sh
+- TCP-port-checker.sh
+- switch-csv.sh
 
 ---
 
