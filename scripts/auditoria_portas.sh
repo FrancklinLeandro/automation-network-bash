@@ -47,7 +47,7 @@
 
 # Diretório e arquivo de log
 DIRETORIO_LOG="$HOME/rede/logs"
-ARQUIVO_LOG="$DIRETORIO_LOG/auditoria_portas_$(date +%Y-%m-%d_%H-%M-%S).log"
+ARQUIVO_LOG="$DIRETORIO_LOG/auditoria_portas_$(date +%d-%m-%Y).log"
 
 # ----------------------------------------------------------
 # Cria diretório de logs se não existir
