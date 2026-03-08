@@ -59,7 +59,7 @@ AMOSTRAS=10
 
 # Diretório e arquivo de log
 DIRETORIO_LOG="$HOME/rede/logs"
-ARQUIVO_LOG="$DIRETORIO_LOG/trafego_${INTERFACE_REDE}_$(date +%Y-%m-%d_%H-%M-%S).log"
+ARQUIVO_LOG="$DIRETORIO_LOG/trafego_${INTERFACE_REDE}_$(date +%d-%m-%Y).log"
 
 # Cria diretório de logs se não existir
 mkdir -p "$DIRETORIO_LOG"
