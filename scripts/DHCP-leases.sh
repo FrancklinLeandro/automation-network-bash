@@ -53,7 +53,7 @@ ARQUIVO_LEASES="/var/lib/NetworkManager/dhclient-*.lease"
 DIRETORIO_LOG="$HOME/rede/logs"
 
 # Data para nome do log
-DATA_ATUAL="$(date +%Y-%m-%d)"
+DATA_ATUAL="$(date +%d-%m-%Y)"
 
 # Arquivo de log
 ARQUIVO_LOG="$DIRETORIO_LOG/dhcp_leases_$DATA_ATUAL.log"
