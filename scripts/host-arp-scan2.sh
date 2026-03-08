@@ -52,7 +52,7 @@ INTERFACE_REDE="xxxx"
 
 # Diretório e arquivo de log
 DIRETORIO_LOG="$HOME/rede/logs"
-ARQUIVO_LOG="$DIRETORIO_LOG/arp_scan_$(date +%Y-%m-%d_%H-%M-%S).log"
+ARQUIVO_LOG="$DIRETORIO_LOG/arp_scan_$(date +%d-%m-%Y).log"
 
 # Cria diretório de logs se não existir
 mkdir -p "$DIRETORIO_LOG"
