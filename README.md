@@ -37,7 +37,7 @@ Cada script contém **documentação detalhada no próprio código**, incluindo:
 
 ## Scripts Disponíveis
 
-Atualmente o repositório possui **10 scripts**, incluindo:
+Atualmente o repositório possui **11 scripts**, incluindo:
 
 - ap-scan.sh
 - latency-monitor.sh
