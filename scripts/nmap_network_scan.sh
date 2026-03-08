@@ -60,7 +60,7 @@ DIRETORIO_LOG="$HOME/rede/logs"
 # Diretório onde os logs serão armazenados
 
 ARQUIVO_LOG="$DIRETORIO_LOG/nmap_scan_$(date +%d-%m-%Y).log"
-# Cria arquivo de log com data e hora no nome
+# Cria arquivo de log com data
 
 # Verifica se o script está sendo executado como root
 if [ "$EUID" -ne 0 ]; then
