@@ -56,7 +56,7 @@ TIMEOUT=3
 
 # Diretório e arquivo de log
 DIRETORIO_LOG="$HOME/rede/logs"
-DATA_ATUAL="$(date +%Y-%m-%d)"
+DATA_ATUAL="$(date +%d-%m-%Y)"
 ARQUIVO_LOG="$DIRETORIO_LOG/portas_$DATA_ATUAL.log"
 
 # Verifica se o arquivo de hosts existe
