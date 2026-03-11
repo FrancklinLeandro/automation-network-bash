@@ -41,7 +41,7 @@
 
 ARQUIVO_DESTINOS="$HOME/rede/lista_destinos.txt"
 DIRETORIO_LOG="$HOME/rede/logs"
-DATA_ATUAL="$(date +%Y-%m-%d)"
+DATA_ATUAL="$(date +%d-%m-%Y)"
 ARQUIVO_LOG="$DIRETORIO_LOG/traceroute_$DATA_ATUAL.log"
 
 # Número máximo de saltos
