@@ -43,3 +43,17 @@ Executa **diagnóstico de rota (traceroute)** para múltiplos destinos definidos
 ```bash
 ./traceroute.sh
 ```
+
+### switch-netbox.sh
+Compara inventários de switches entre **NetBox** e uma **planilha CSV**, identificando inconsistências como dispositivos presentes em uma base e ausentes na outra. Gera relatório automático em **arquivo de log** para auditoria de inventário de rede.
+**Uso:**
+```bash
+./switch-netbox.sh
+```
+
+### switch-csv.sh
+Realiza **teste de conectividade (ping)** em switches listados em arquivos **CSV**, identificando dispositivos **UP ou DOWN** e gerando relatório consolidado em **log diário** para auditoria de disponibilidade da rede.
+**Uso:**
+```bash
+./switch-csv.sh
+```
