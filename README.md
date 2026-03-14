@@ -138,15 +138,6 @@ Realiza **monitoramento de conectividade de Access Points (APs)** por meio de te
 ./ap-scan.sh
 ```
 
-### TCP-port-checker.sh
-Verifica **portas TCP em múltiplos hosts de rede** utilizando **netcat**, permitindo identificar rapidamente serviços acessíveis (como SSH, HTTP, HTTPS e DNS) e registrar os resultados em arquivo de log para auditoria e diagnóstico de conectividade.
-
-**Uso:**
-
-```bash
-./TCP-port-checker.sh
-```
-
 ### DHCP-leases.sh
 Analisa **arquivos de concessões DHCP (leases)** gerados pelo NetworkManager/dhclient, extraindo informações como **IP concedido, MAC Address, hostname e data de expiração**, gerando um relatório estruturado para auditoria de dispositivos na rede.
 
