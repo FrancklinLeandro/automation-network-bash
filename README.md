@@ -73,3 +73,85 @@ Realiza **descoberta de hosts ativos** em uma rede e executa **varredura de port
 
 ```bash
 sudo ./nmap_network_scan.sh
+```
+
+### latency-monitor.sh
+Monitora **latência média e perda de pacotes** para múltiplos destinos utilizando **ping**, registrando os resultados em **log diário** para análise de qualidade de rede e diagnóstico de instabilidade.
+
+**Uso:**
+
+```bash
+./latency-monitor.sh
+```
+
+### host-monitor.sh
+Realiza **monitoramento de conectividade** para múltiplos hosts utilizando **ping**, classificando cada destino como **UP ou DOWN** e registrando os resultados em **log diário** com resumo final da disponibilidade.
+
+**Uso:**
+
+```bash
+./host-monitor.sh
+```
+
+### host-arp-scan2.sh
+Realiza **descoberta de dispositivos na rede local** utilizando **ARP Scan**, identificando IP, endereço MAC e fabricante dos equipamentos e registrando os resultados em **log diário** para inventário e auditoria de rede.
+
+**Uso:**
+
+```bash
+sudo ./host-arp-scan2.sh
+```
+
+### firewall_basico.sh
+Aplica **configuração básica de firewall com iptables** em servidores Linux, utilizando política **deny-by-default**, liberando apenas serviços essenciais (SSH restrito, HTTP e HTTPS) para hardening inicial de ambientes Ubuntu.
+
+**Uso:**
+
+```bash
+sudo ./firewall_basico.sh
+```
+
+### bandwidth-usage-monitor.sh
+Monitora o **tráfego de rede (RX/TX)** de uma interface Linux, calculando a taxa de recebimento e transmissão em **KB/s** a partir dos dados do `/proc/net/dev`, permitindo análise básica de consumo de banda e identificação de picos de tráfego.
+
+**Uso:**
+
+```bash
+./bandwidth-usage-monitor.sh
+```
+
+### auditoria_portas.sh
+Realiza **auditoria básica de portas TCP/UDP e serviços ativos no host local**, utilizando `ss` para identificar portas em escuta e verificando também o **status do firewall UFW**, auxiliando em processos de hardening e diagnóstico de exposição de serviços.
+
+**Uso:**
+
+```bash
+sudo ./auditoria_portas.sh
+```
+
+### ap-scan.sh
+Realiza **monitoramento de conectividade de Access Points (APs)** por meio de testes ICMP (`ping`), lendo uma lista estruturada de dispositivos e registrando **status UP/DOWN em logs**, facilitando auditoria e acompanhamento de disponibilidade da infraestrutura Wi-Fi.
+
+**Uso:**
+
+```bash
+./ap-scan.sh
+```
+
+### TCP-port-checker.sh
+Verifica **portas TCP em múltiplos hosts de rede** utilizando **netcat**, permitindo identificar rapidamente serviços acessíveis (como SSH, HTTP, HTTPS e DNS) e registrar os resultados em arquivo de log para auditoria e diagnóstico de conectividade.
+
+**Uso:**
+
+```bash
+./TCP-port-checker.sh
+```
+
+### DHCP-leases.sh
+Analisa **arquivos de concessões DHCP (leases)** gerados pelo NetworkManager/dhclient, extraindo informações como **IP concedido, MAC Address, hostname e data de expiração**, gerando um relatório estruturado para auditoria de dispositivos na rede.
+
+**Uso:**
+
+```bash
+sudo ./DHCP-leases.sh
+```
