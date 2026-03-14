@@ -57,3 +57,11 @@ Realiza **teste de conectividade (ping)** em switches listados em arquivos **CSV
 ```bash
 ./switch-csv.sh
 ```
+
+### nmap_network_scan.sh
+Realiza **descoberta de hosts ativos** em uma rede e executa **varredura de portas TCP comuns utilizando Nmap**, identificando serviços em execução e registrando os resultados em **log diário** para auditoria e troubleshooting de infraestrutura.
+
+**Uso:**
+
+```bash
+sudo ./nmap_network_scan.sh
