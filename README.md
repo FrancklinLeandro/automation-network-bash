@@ -168,5 +168,6 @@ automation-network-bash/
 ├── security/
 │   ├── auditoria_portas.sh
 │   └── firewall_basico.sh
+├── NOTA.md
 └── README.md
 ```
