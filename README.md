@@ -146,3 +146,27 @@ Analisa **arquivos de concessões DHCP (leases)** gerados pelo NetworkManager/dh
 ```bash
 sudo ./DHCP-leases.sh
 ```
+
+## Estrutura do Repositório
+```
+automation-network-bash/
+├── connectivity/
+│   ├── host-monitor.sh
+│   ├── latency-monitor.sh
+│   ├── switch-csv.sh
+│   ├── ap-scan.sh
+│   ├── TCP-port-checker.sh
+│   └── traceroute.sh
+├── discovery/
+│   ├── nmap_network_scan.sh
+│   ├── host-arp-scan2.sh
+│   └── DHCP-leases.sh
+├── security/
+│   ├── firewall_basico.sh
+│   └── auditoria_portas.sh
+├── inventory/
+│   └── switch-netbox.sh
+├── monitoring/
+│   └── bandwidth-usage-monitor.sh
+└── README.md
+```
