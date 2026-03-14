@@ -162,9 +162,9 @@ automation-network-bash/
 │   ├── host-arp-scan2.sh
 │   └── nmap_network_scan.sh
 ├── inventory/
-│   ├── switch-netbox.sh
+│   └── switch-netbox.sh
 ├── monitoring/
-│   ├── bandwidth-usage-monitor.sh
+│   └── bandwidth-usage-monitor.sh
 ├── security/
 │   ├── auditoria_portas.sh
 │   └── firewall_basico.sh
