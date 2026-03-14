@@ -46,13 +46,3 @@ Verifica portas TCP em múltiplos hosts utilizando **netcat**, permitindo identi
 ./TCP-port-checker.sh hosts.txt
 
 ---
-
-### traceroute.sh
-Executa **diagnóstico de rota (traceroute)** para múltiplos destinos definidos em um arquivo, registrando automaticamente os resultados em **log diário** para análise de caminho e troubleshooting de rede.
-
-**Uso:**
-
-```bash
-./traceroute.sh
-
----
