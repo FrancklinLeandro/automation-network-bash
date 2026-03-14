@@ -151,22 +151,22 @@ sudo ./DHCP-leases.sh
 ```
 automation-network-bash/
 ├── connectivity/
+│   ├── TCP-port-checker.sh
+│   ├── ap-scan.sh
 │   ├── host-monitor.sh
 │   ├── latency-monitor.sh
 │   ├── switch-csv.sh
-│   ├── ap-scan.sh
-│   ├── TCP-port-checker.sh
 │   └── traceroute.sh
 ├── discovery/
-│   ├── nmap_network_scan.sh
+│   ├── DHCP-leases.sh
 │   ├── host-arp-scan2.sh
-│   └── DHCP-leases.sh
-├── security/
-│   ├── firewall_basico.sh
-│   └── auditoria_portas.sh
+│   └── nmap_network_scan.sh
 ├── inventory/
-│   └── switch-netbox.sh
+│   ├── switch-netbox.sh
 ├── monitoring/
-│   └── bandwidth-usage-monitor.sh
+│   ├── bandwidth-usage-monitor.sh
+├── security/
+│   ├── auditoria_portas.sh
+│   └── firewall_basico.sh
 └── README.md
 ```
