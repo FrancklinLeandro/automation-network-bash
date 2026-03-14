@@ -1,11 +1,7 @@
 # automation-network-bash
-
 ## Objetivo do Repositório
-
 Este repositório contém scripts **Bash** voltados para automação em **Infraestrutura de Redes**.
-
 O foco é:
-
 - Diagnóstico de conectividade
 - Auditoria básica de segurança
 - Monitoramento de dispositivos
@@ -16,9 +12,7 @@ Os scripts são desenvolvidos para uso prático em **laboratórios e ambientes c
 ---
 
 ## Tipos de Automações
-
 Este repositório inclui automações como:
-
 - Verificação de portas TCP
 - Testes de conectividade (ping, nc)
 - Coleta de informações de rede
@@ -28,7 +22,6 @@ Este repositório inclui automações como:
 - Auditoria de inventário de switches (comparação entre NetBox e planilha CSV)
 
 Cada script contém **documentação detalhada no próprio código**, incluindo:
-
 - objetivo
 - requisitos
 - exemplo de uso
@@ -39,10 +32,14 @@ Cada script contém **documentação detalhada no próprio código**, incluindo:
 
 ### TCP-port-checker.sh
 Verifica portas TCP em múltiplos hosts utilizando **netcat**, permitindo identificar rapidamente serviços acessíveis em dispositivos de rede.
-
 **Uso:**
-
 ```bash
 ./TCP-port-checker.sh hosts.txt
+```
 
----
+### traceroute.sh
+Executa **diagnóstico de rota (traceroute)** para múltiplos destinos definidos em um arquivo, registrando automaticamente os resultados em **log diário** para análise de caminho e troubleshooting de rede.
+**Uso:**
+```bash
+./traceroute.sh
+```
