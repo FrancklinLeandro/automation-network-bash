@@ -35,24 +35,12 @@ Cada script contém **documentação detalhada no próprio código**, incluindo:
 
 ---
 
-## Scripts Disponíveis
+## Scripts
 
-Atualmente o repositório possui **11 scripts**, incluindo:
+### TCP-port-checker.sh
+Verifica portas TCP em múltiplos hosts utilizando **netcat**, permitindo identificar rapidamente serviços acessíveis em dispositivos de rede.
 
-- ap-scan.sh
-- latency-monitor.sh
-- TCP-port-checker.sh
-- switch-csv.sh
+**Uso:**
 
----
-
-## Dependências
-
-Alguns scripts utilizam ferramentas comuns em ambientes Linux:
-
-- bash
-- netcat (nc)
-- traceroute
-- tcpdump
-- iperf3
-- awk
+```bash
+./TCP-port-checker.sh hosts.txt
