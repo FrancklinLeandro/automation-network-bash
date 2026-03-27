@@ -38,7 +38,7 @@
 #   - Permissão sudo para execução do arp-scan
 #
 # Interface Configurada:
-#   ens160
+#   xxxx
 #
 # Diretório de Logs:
 #   $HOME/rede/logs
