@@ -66,6 +66,7 @@ ARQUIVO_LOG="$DIRETORIO_LOG/nmap_scan_$(date +%d-%m-%Y).log"
 if [ "$EUID" -ne 0 ]; then
   echo "ERRO: este script deve ser executado como root (sudo)."
   exit 1
+  # Sai do script
 fi
 
 # ----------------------------------------------------------
@@ -156,7 +157,7 @@ echo "Log salvo em: $ARQUIVO_LOG"
 echo "=================================================="
 
 } | tee "$ARQUIVO_LOG"
-# tee exibe a saída no terminal e grava no arquivo de log
+# tee exibe a saída no terminal e grava no arquivo de log( sobrescervendo o arquivo)
 
 exit 0
 # Finaliza o script com código de sucesso
