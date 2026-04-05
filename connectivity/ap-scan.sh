@@ -73,6 +73,7 @@ echo ""
 
 echo "DATA; NOME_AP; HOST; IP; STATUS" | tee -a "$LOG"
 echo "" | tee -a "$LOG"
+# Escreve no arquivo de log (sem sobrescrever)
 
 # Contadores para o resumo final
 HOSTS_UP=0
