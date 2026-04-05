@@ -88,7 +88,7 @@ while read -r HOST; do
   echo -e "\nTestando conectividade com: $HOST"
 
   # Executa o ping
-  if ping -c "$QTD_PING" -W "$TIMEOUT" "$HOST" &> /dev/null; then
+  if ping -c "$QTD_PING" -W "$TIMEOUT" "$HOST" &> /dev/null; then # &> /dev/null silencia tudo
     echo "$(date '+%Y-%m-%d') - $HOST - UP" | tee -a "$ARQUIVO_LOG" # Escreve no arquivo de log (sem sobrescrever)
     ((HOSTS_UP++))
   else
