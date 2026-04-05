@@ -86,7 +86,7 @@ while read -r NOME_AP HOST IP; do
     [ -z "$IP" ] || [[ "$NOME_AP" == \#* ]] && continue
 
   # Executa o ping
-  if ping -c "$QTD_PING" -W "$TIMEOUT" "$IP" &> /dev/null; then
+  if ping -c "$QTD_PING" -W "$TIMEOUT" "$IP" &> /dev/null; then # &> /dev/null silencia tudo
     echo "$(date '+%d-%m-%Y') $NOME_AP - $HOST - $IP - UP" | tee -a "$LOG"
     ((HOSTS_UP++))
   else
