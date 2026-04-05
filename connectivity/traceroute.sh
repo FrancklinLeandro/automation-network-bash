@@ -39,19 +39,25 @@
 #      ./traceroute.sh
 # ==========================================================
 
+# Arquivo com lista de hosts de destinos
 ARQUIVO_DESTINOS="$HOME/rede/lista_destinos.txt"
+
+# Diretório de log
 DIRETORIO_LOG="$HOME/rede/logs"
 DATA_ATUAL="$(date +%d-%m-%Y)"
+
+# Arquivo de log
 ARQUIVO_LOG="$DIRETORIO_LOG/traceroute_$DATA_ATUAL.log"
 
 # Número máximo de saltos
 MAX_SALTOS=30
 
-# Verifica se o traceroute está instalado
+# Verifica se o comando traceroute está instalado
 if ! command -v traceroute &> /dev/null; then
   echo "ERRO: comando 'traceroute' não encontrado."
   echo "Instale com: sudo apt install traceroute"
   exit 1
+  # Sai do script
 fi
 
 # Verifica se o arquivo de destinos existe
@@ -63,11 +69,12 @@ fi
 # Cria diretório de logs se não existir
 mkdir -p "$DIRETORIO_LOG"
 
-echo "==================================================" | tee "$ARQUIVO_LOG"
+echo "==================================================" | tee "$ARQUIVO_LOG" # tee sscreve no arquivo de log (sobrescrevendo o arquivo)
 echo " DIAGNÓSTICO DE ROTA DE REDE (TRACEROUTE)" | tee -a "$ARQUIVO_LOG"
 echo " Data: $(date)" | tee -a "$ARQUIVO_LOG"
 echo "==================================================" | tee -a "$ARQUIVO_LOG"
 echo | tee -a "$ARQUIVO_LOG"
+# tee -a sscreve no arquivo de log (sem sobrescrever)
 
 # Leitura de cada destino
 while read -r DESTINO; do
