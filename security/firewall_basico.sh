@@ -65,6 +65,7 @@ PORTA_SSH=22
 if [ "$EUID" -ne 0 ]; then
   echo "ERRO: Execute como root (sudo)."
   exit 1
+  # Sai do script
 fi
 
 echo "Aplicando regras de firewall com iptables..."
