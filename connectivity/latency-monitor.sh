@@ -43,9 +43,14 @@
 #      ./latency-monitor.sh
 # ==========================================================
 
+# Arquivo com lista de hosts de destinos
 ARQUIVO_DESTINOS="$HOME/rede/lista_destinos.txt"
+
+#Diretório de log
 DIRETORIO_LOG="$HOME/rede/logs"
-DATA_ATUAL="$(date +%Y-%m-%d)"
+DATA_ATUAL="$(date +%d-%m-%Y)"
+
+# Arquivo de log
 ARQUIVO_LOG="$DIRETORIO_LOG/latencia_$DATA_ATUAL.log"
 
 # Quantidade de pacotes por destino
@@ -58,16 +63,18 @@ INTERVALO=1
 if [ ! -f "$ARQUIVO_DESTINOS" ]; then
   echo "ERRO: Arquivo $ARQUIVO_DESTINOS não encontrado."
   exit 1
+  # Sai do script
 fi
 
 # Cria diretório de logs se não existir
 mkdir -p "$DIRETORIO_LOG"
 
-echo "==================================================" | tee "$ARQUIVO_LOG"
+echo "==================================================" | tee "$ARQUIVO_LOG" # Escreve no arquivo de log (sobrescrevendo o arquivo)
 echo " MONITORAMENTO DE LATÊNCIA E PERDA DE PACOTES" | tee -a "$ARQUIVO_LOG"
 echo " Data: $(date)" | tee -a "$ARQUIVO_LOG"
 echo "==================================================" | tee -a "$ARQUIVO_LOG"
 echo | tee -a "$ARQUIVO_LOG"
+# Escreve no arquivo de log (sem sobrescrever)
 
 # Leitura de cada destino
 while read -r DESTINO; do
