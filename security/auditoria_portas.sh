@@ -60,7 +60,9 @@ mkdir -p "$DIRETORIO_LOG"
 # ----------------------------------------------------------
 if [ "$EUID" -ne 0 ]; then
   echo "ERRO: execute este script como root (sudo)." | tee "$ARQUIVO_LOG"
+  # tee escreve no arquivo de log (sobrescrevendo)
   exit 1
+  # Sai do script
 fi
 
 # ----------------------------------------------------------
