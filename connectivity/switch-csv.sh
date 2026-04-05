@@ -54,10 +54,11 @@ ARQUIVOS_SWITCHES=("$DIRETORIO_SWITCHES"/*.csv)
 
 LOG="$HOME/PINGS/LOG_SWITCH/switch_$(date +%d-%m-%Y).log"
 
-echo -e "\n------ DATA: $(date +%d-%m-%Y) ------" | tee "$LOG"
+echo -e "\n------ DATA: $(date +%d-%m-%Y) ------" | tee "$LOG" # Escreve no arquivo de log (sobrescrevendo o arquivo)
 echo -e "\nNOME; IP; SITE; MODELO; STATUS" | tee -a "$LOG"
 echo -e "\n------ INICIANDO TESTE DE PING DOS SWITCHES ------" | tee -a "$LOG"
 echo "" | tee -a "$LOG"
+# Escreve no arquivo de log (sem sobrescrever)
 
 for ARQUIVO in "${ARQUIVOS_SWITCHES[@]}"; do # Percorre cada arquivo CSV encontrado no array de arquivos de switches
 
