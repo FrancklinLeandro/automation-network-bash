@@ -73,6 +73,7 @@ echo " VERIFICAÇÃO DE PORTAS TCP EM HOSTS DE REDE"
 echo " Data: $(date)"
 echo "=================================================="
 echo | tee -a "$ARQUIVO_LOG"
+# Escreve no arquivo de log (sem sobrescrever)
 
 # Leitura de cada host do arquivo
 while read -r HOST; do
