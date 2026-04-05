@@ -62,6 +62,7 @@ ARQUIVO_LOG="$DIRETORIO_LOG/dhcp_leases_$DATA_ATUAL.log"
 if [ "$EUID" -ne 0 ]; then
   echo "ERRO: este script deve ser executado como root (sudo)."
   exit 1
+  # Sai do script
 fi
 
 # Cria diretório de logs se não existir
@@ -73,11 +74,12 @@ if ! ls $ARQUIVO_LEASES &> /dev/null; then
   exit 1
 fi
 
-echo "==================================================" | tee "$ARQUIVO_LOG"
+echo "==================================================" | tee "$ARQUIVO_LOG" # tee escreve no arquivo de log (sobrescrevendo o arquivo)
 echo " MONITORAMENTO DE CONCESSÕES DHCP (LEASES)" | tee -a "$ARQUIVO_LOG"
 echo " Data: $(date)" | tee -a "$ARQUIVO_LOG"
 echo "==================================================" | tee -a "$ARQUIVO_LOG"
 echo | tee -a "$ARQUIVO_LOG"
+# tee -a escreve no arquivo de log (sem sobrescrever)
 
 # Processa cada arquivo de lease encontrado
 for LEASE in $ARQUIVO_LEASES; do
