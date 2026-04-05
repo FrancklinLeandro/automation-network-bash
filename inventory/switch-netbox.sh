@@ -68,6 +68,7 @@ declare -A PLANILHA
 echo "------ DATA: $(date +%d-%m-%Y) ------" | tee "$LOG"
 echo "------ INICIANDO COMPARAÇÃO NETBOX x PLANILHA ------" | tee -a "$LOG"
 echo "" | tee -a "$LOG"
+# tee -a escreve no arquivo de log(sem sobrescrever)
 
 # Loop while que lê o arquivo linha por linha
 # IFS=";" define o separador de campos como ponto e vírgula
