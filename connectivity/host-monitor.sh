@@ -62,6 +62,7 @@ TIMEOUT=2
 if [ ! -f "$ARQUIVO_HOSTS" ]; then
   echo "ERRO: Arquivo $ARQUIVO_HOSTS não encontrado."
   exit 1
+  # Sai do script
 fi
 
 # Cria o diretório de logs caso não exista
@@ -88,7 +89,7 @@ while read -r HOST; do
 
   # Executa o ping
   if ping -c "$QTD_PING" -W "$TIMEOUT" "$HOST" &> /dev/null; then
-    echo "$(date '+%Y-%m-%d') - $HOST - UP" | tee -a "$ARQUIVO_LOG"
+    echo "$(date '+%Y-%m-%d') - $HOST - UP" | tee -a "$ARQUIVO_LOG" # Escreve no arquivo de log (sem sobrescrever)
     ((HOSTS_UP++))
   else
     echo "$(date '+%Y-%m-%d') - $HOST - DOWN" | tee -a "$ARQUIVO_LOG"
