@@ -77,6 +77,7 @@ for ARQUIVO in "${ARQUIVOS_SWITCHES[@]}"; do # Percorre cada arquivo CSV encontr
 
         ping -c 2 -W 2 "$IP" > /dev/null 2>&1 # Envia dois pacotes para cada IP. Cada um aguarda 2 segundos
 
+        # Verifica se o último comando(ping) foi executado com sucesso
         if [ $? -eq 0 ]; then
             STATUS="UP"
         else
