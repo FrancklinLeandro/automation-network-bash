@@ -68,6 +68,7 @@ mkdir -p "$DIRETORIO_LOG"
 if ! ip link show "$INTERFACE_REDE" &>/dev/null; then
   echo "Erro: interface '$INTERFACE_REDE' não encontrada."
   exit 1
+  # Sai do script
 fi
 
 echo "Monitoramento de tráfego iniciado: $(date)" | tee -a "$ARQUIVO_LOG"
@@ -110,6 +111,7 @@ for ((i=1; i<=AMOSTRAS; i++)); do
   echo "  RX(Dados recebidos): ${RX_KB} KB/s" | tee -a "$ARQUIVO_LOG"
   echo "  TX(Dados transmitidos): ${TX_KB} KB/s" | tee -a "$ARQUIVO_LOG"
   echo "----------------------------------------------" | tee -a "$ARQUIVO_LOG"
+  # tee -a escreve no arquivo de log (sem sobrescrever)
 
   RX_ANT=$RX_ATUAL
   TX_ANT=$TX_ATUAL
