@@ -68,6 +68,7 @@ fi
 if ! ip link show "$INTERFACE_REDE" &>/dev/null; then
   echo "Erro: interface de rede '$INTERFACE_REDE' não encontrada."
   exit 1
+  # Sai do script
 fi
 
 echo "Início da varredura ARP: $(date)" | tee -a "$ARQUIVO_LOG"
@@ -88,5 +89,6 @@ awk '
     print "----------------------------------------------"
   }
 ' | tee -a "$ARQUIVO_LOG"
+# tee -a escreve no arquivo de log (sem sobrescrever)
 
 echo "Varredura finalizada: $(date)" | tee -a "$ARQUIVO_LOG"
