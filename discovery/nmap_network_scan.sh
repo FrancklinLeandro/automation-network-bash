@@ -121,6 +121,7 @@ fi
 
 echo "Hosts encontrados:"
 for host in $HOSTS_ATIVOS; do
+# Loop que percorre cada host encontrado
   echo " - $host"
 done
 # Exibe todos os hosts ativos encontrados
@@ -133,9 +134,10 @@ echo
 echo ">> Iniciando escaneamento de portas..."
 
 for host in $HOSTS_ATIVOS
+# Itera novamente sobre os hosts ativos
 do
   echo "--------------------------------------------------"
-  echo "Host: $host"
+  echo "Host: $host"  # Indica qual host está sendo escaneado
   echo "--------------------------------------------------"
 
   nmap -sS -sV -p "$PORTAS" "$host" | awk '
