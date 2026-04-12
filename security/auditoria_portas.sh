@@ -88,9 +88,11 @@ echo
 # ----------------------------------------------------------
 # Lista portas TCP em escuta
 # ----------------------------------------------------------
+# $2 == "LISTEN": filtra apenas sockets em estado LISTEN
+# $4 = endereço:porta | $7 = processo associado
 echo ">> Portas TCP em LISTEN"
 echo "--------------------------------------------------"
-ss -tulnp | awk '
+ss -tulnp | awk ' 
   $2 == "LISTEN" {
     printf "PROTO: TCP | ENDEREÇO: %-22s | SERVIÇO: %s\n", $4, $7
   }
@@ -100,6 +102,8 @@ echo
 # ----------------------------------------------------------
 # Lista portas UDP abertas
 # ----------------------------------------------------------
+# NR > 1: Ignora cabeçalho da saída
+# $4 = endereço | $6 = processo (formato diferente do TCP)
 echo ">> Portas UDP ativas"
 echo "--------------------------------------------------"
 ss -uulnp | awk '
