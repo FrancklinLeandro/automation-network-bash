@@ -1,6 +1,6 @@
 # automation-network-bash
 ## Objetivo do Repositório
-Este repositório contém scripts **Bash** voltados para automação em **Infraestrutura de Redes**.
+Este repositório contém scripts **Bash** voltados para automação em **Infraestrutura de Redes, suporte e segurança**.
 O foco é:
 - Diagnóstico de conectividade
 - Auditoria básica de segurança
