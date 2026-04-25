@@ -1,153 +1,91 @@
-# automation-network-bash
-## Objetivo do Repositório
-Este repositório contém scripts **Bash** voltados para automação em **Infraestrutura, Redes, suporte e segurança**.
-O foco é:
-- Diagnóstico de conectividade
-- Auditoria básica de segurança
-- Monitoramento de dispositivos
-- Automatização de tarefas repetitivas em ambientes Linux
+# 🚀 automation-network-bash
 
-Os scripts são desenvolvidos para uso prático em **laboratórios e ambientes corporativos**.
+## 🎯 Objetivo
 
----
+Repositório de automação em **Bash** voltado para **infraestrutura Linux, redes e segurança**, com foco em cenários reais de operação.
 
-## Tipos de Automações
-Este repositório inclui automações como:
-- Verificação de portas TCP
-- Testes de conectividade (ping, nc)
-- Coleta de informações de rede
-- Monitoramento de interfaces
-- Scripts auxiliares para troubleshooting
-- Diagnóstico de rota (traceroute) para múltiplos destinos com geração automática de log diário
-- Auditoria de inventário de switches (comparação entre NetBox e planilha CSV)
+Os scripts foram desenvolvidos para:
 
-Cada script contém **documentação detalhada no próprio código**, incluindo:
-- objetivo
-- requisitos
-- exemplo de uso
+- Monitoramento de rede e disponibilidade  
+- Diagnóstico e troubleshooting de conectividade  
+- Auditoria de segurança básica  
+- Coleta e análise de informações de rede  
+- Automação de tarefas operacionais em ambientes Linux  
 
 ---
 
-## Scripts
+## 🔥 Casos de Uso
 
-### TCP-port-checker.sh
-Verifica portas TCP em múltiplos hosts utilizando **netcat**, permitindo identificar rapidamente serviços acessíveis em dispositivos de rede.
+Os scripts simulam atividades comuns em ambientes de:
 
-**Uso:**
+- NOC (Network Operations Center)  
+- Infraestrutura Linux  
+- Operações de rede  
+- Auditoria e troubleshooting  
 
-```bash
-./TCP-port-checker.sh hosts.txt
-```
+---
 
-### traceroute.sh
-Executa **diagnóstico de rota (traceroute)** para múltiplos destinos definidos em um arquivo, registrando automaticamente os resultados em **log diário** para análise de caminho e troubleshooting de rede.
+## 🛠️ Tipos de Automação
 
-**Uso:**
+- Verificação de portas TCP (netcat)  
+- Monitoramento de hosts e latência  
+- Descoberta de dispositivos na rede (ARP Scan, Nmap)  
+- Análise de tráfego e interfaces  
+- Auditoria de firewall e serviços  
+- Comparação de inventário (NetBox vs CSV)  
+- Diagnóstico de rota com geração de logs  
 
-```bash
-./traceroute.sh
-```
+Todos os scripts incluem documentação com:
+- objetivo  
+- requisitos  
+- exemplo de uso  
 
-### switch-netbox.sh
-Compara inventários de switches entre **NetBox** e uma **planilha CSV**, identificando inconsistências como dispositivos presentes em uma base e ausentes na outra. Gera relatório automático em **arquivo de log** para auditoria de inventário de rede.
+---
 
-**Uso:**
+## 📂 Scripts
 
-```bash
-./switch-netbox.sh
-```
+### 🔎 TCP-port-checker.sh
+Verificação de portas TCP em múltiplos hosts com **netcat**
 
-### switch-csv.sh
-Realiza **teste de conectividade (ping)** em switches listados em arquivos **CSV**, identificando dispositivos **UP ou DOWN** e gerando relatório consolidado em **log diário** para auditoria de disponibilidade da rede.
+### 🌐 traceroute.sh
+Diagnóstico de rota com geração de **log diário**
 
-**Uso:**
+### 📊 switch-netbox.sh
+Auditoria de inventário (**NetBox vs CSV**)
 
-```bash
-./switch-csv.sh
-```
+### 📡 switch-csv.sh
+Monitoramento de switches (status **UP/DOWN**)
 
-### nmap_network_scan.sh
-Realiza **descoberta de hosts ativos** em uma rede e executa **varredura de portas TCP comuns utilizando Nmap**, identificando serviços em execução e registrando os resultados em **log diário** para auditoria e troubleshooting de infraestrutura.
+### 🧠 nmap_network_scan.sh
+Descoberta de hosts + varredura de portas com **Nmap**
 
-**Uso:**
+### 📶 latency-monitor.sh
+Monitoramento de latência e perda de pacotes
 
-```bash
-sudo ./nmap_network_scan.sh
-```
+### 🖥️ host-monitor.sh
+Verificação de disponibilidade de múltiplos hosts
 
-### latency-monitor.sh
-Monitora **latência média e perda de pacotes** para múltiplos destinos utilizando **ping**, registrando os resultados em **log diário** para análise de qualidade de rede e diagnóstico de instabilidade.
+### 🧬 host-arp-scan2.sh
+Descoberta de dispositivos via **ARP Scan**
 
-**Uso:**
+### 🔒 firewall_basico.sh
+Configuração de firewall com **iptables (deny-by-default)**
 
-```bash
-./latency-monitor.sh
-```
+### 📈 bandwidth-usage-monitor.sh
+Monitoramento de tráfego via `/proc/net/dev`
 
-### host-monitor.sh
-Realiza **monitoramento de conectividade** para múltiplos hosts utilizando **ping**, classificando cada destino como **UP ou DOWN** e registrando os resultados em **log diário** com resumo final da disponibilidade.
+### 🔍 auditoria_portas.sh
+Auditoria de portas e serviços com `ss`
 
-**Uso:**
+### 📡 ap-scan.sh
+Monitoramento de Access Points (ICMP)
 
-```bash
-./host-monitor.sh
-```
+### 📄 DHCP-leases.sh
+Análise de leases DHCP (IP, MAC, hostname)
 
-### host-arp-scan2.sh
-Realiza **descoberta de dispositivos na rede local** utilizando **ARP Scan**, identificando IP, endereço MAC e fabricante dos equipamentos e registrando os resultados em **log diário** para inventário e auditoria de rede.
+---
 
-**Uso:**
-
-```bash
-sudo ./host-arp-scan2.sh
-```
-
-### firewall_basico.sh
-Aplica **configuração básica de firewall com iptables** em servidores Linux, utilizando política **deny-by-default**, liberando apenas serviços essenciais (SSH restrito, HTTP e HTTPS) para hardening inicial de ambientes Ubuntu.
-
-**Uso:**
-
-```bash
-sudo ./firewall_basico.sh
-```
-
-### bandwidth-usage-monitor.sh
-Monitora o **tráfego de rede (RX/TX)** de uma interface Linux, calculando a taxa de recebimento e transmissão em **KB/s** a partir dos dados do `/proc/net/dev`, permitindo análise básica de consumo de banda e identificação de picos de tráfego.
-
-**Uso:**
-
-```bash
-./bandwidth-usage-monitor.sh
-```
-
-### auditoria_portas.sh
-Realiza **auditoria básica de portas TCP/UDP e serviços ativos no host local**, utilizando `ss` para identificar portas em escuta e verificando também o **status do firewall UFW**, auxiliando em processos de hardening e diagnóstico de exposição de serviços.
-
-**Uso:**
-
-```bash
-sudo ./auditoria_portas.sh
-```
-
-### ap-scan.sh
-Realiza **monitoramento de conectividade de Access Points (APs)** por meio de testes ICMP (`ping`), lendo uma lista estruturada de dispositivos e registrando **status UP/DOWN em logs**, facilitando auditoria e acompanhamento de disponibilidade da infraestrutura Wi-Fi.
-
-**Uso:**
-
-```bash
-./ap-scan.sh
-```
-
-### DHCP-leases.sh
-Analisa **arquivos de concessões DHCP (leases)** gerados pelo NetworkManager/dhclient, extraindo informações como **IP concedido, MAC Address, hostname e data de expiração**, gerando um relatório estruturado para auditoria de dispositivos na rede.
-
-**Uso:**
-
-```bash
-sudo ./DHCP-leases.sh
-```
-
-## Estrutura do Repositório
+## 🗂️ Estrutura
 ```
 automation-network-bash/
 ├── connectivity/
@@ -171,3 +109,11 @@ automation-network-bash/
 ├── NOTA.md
 └── README.md
 ```
+---
+
+## 🚀 Diferencial
+
+- Scripts voltados para **cenários reais de infraestrutura**
+- Uso de ferramentas padrão de mercado  
+- Baixo overhead (uso direto do sistema Linux)  
+- Foco em automação operacional  
