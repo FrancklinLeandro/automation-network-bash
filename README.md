@@ -2,15 +2,15 @@
 
 ## 🎯 Objetivo
 
-Repositório de automação em **Bash** voltado para **infraestrutura Linux, redes e segurança**, com foco em cenários reais de operação.
+Repositório de automação em **Bash** voltado para **infraestrutura Linux, redes e operações**, com foco em cenários reais de ambiente corporativo.
 
 Os scripts foram desenvolvidos para:
 
-- Monitoramento de rede e disponibilidade  
+- Administração e monitoramento de infraestrutura Linux  
 - Diagnóstico e troubleshooting de conectividade  
 - Auditoria de segurança básica  
-- Coleta e análise de informações de rede  
-- Automação de tarefas operacionais em ambientes Linux  
+- Coleta e análise de informações de sistema e rede  
+- Automação de tarefas operacionais  
 
 ---
 
@@ -18,9 +18,10 @@ Os scripts foram desenvolvidos para:
 
 Os scripts simulam atividades comuns em ambientes de:
 
-- NOC (Network Operations Center)  
 - Infraestrutura Linux  
+- NOC (Network Operations Center)  
 - Operações de rede  
+- Administração de sistemas  
 - Auditoria e troubleshooting  
 
 ---
@@ -113,7 +114,8 @@ automation-network-bash/
 
 ## 🚀 Diferencial
 
-- Scripts voltados para **cenários reais de infraestrutura**
+- Automação voltada para **infraestrutura Linux e administração de sistemas**  
+- Scripts aplicáveis a **cenários reais de operação**  
 - Uso de ferramentas padrão de mercado  
 - Baixo overhead (uso direto do sistema Linux)  
-- Foco em automação operacional  
+- Foco em automação operacional e troubleshooting   
