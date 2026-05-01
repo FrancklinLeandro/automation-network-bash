@@ -91,7 +91,7 @@ if [ $? -eq 0 ]; then
   echo "Backup criado com sucesso: $ARQUIVO_BACKUP" | tee -a "$LOG"
 else
   echo "ERRO ao criar backup." | tee -a "$LOG"
-  exit 1 # Encerra o script
+  exit 1 # Encerra o script com erro
 fi
 
 # -------------------------
@@ -126,4 +126,5 @@ echo "==================================================" | tee -a "$LOG"
 echo " BACKUP FINALIZADO - $(date)" | tee -a "$LOG"
 echo "==================================================" | tee -a "$LOG"
 
-exit 0
+exit 0 
+# Encerra o script com sucesso
