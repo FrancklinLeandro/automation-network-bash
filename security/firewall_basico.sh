@@ -75,9 +75,16 @@ sleep 2
 # Limpa regras existentes
 # -------------------------
 iptables -F
+# Remove todas as regras das chains padrão (filter table).
+
 iptables -X
+# Apaga todas as chains definidas pelo usuário.
+
 iptables -t nat -F
+# Remove todas as regras da tabela NAT.
+
 iptables -t mangle -F
+# Remove todas as regras da tabela mangle.
 
 # -------------------------
 # Define políticas padrão
@@ -105,14 +112,17 @@ iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 # s(Source): Máquina cliente/origem
 # -------------------------
 iptables -A INPUT -p tcp -s "$REDE_SSH" --dport "$PORTA_SSH" -m conntrack --ctstate NEW -j ACCEPT
+# Permite novas conexões SSH somente da rede definida
 
 # -------------------------
 # Libera HTTP (porta 80)
+# # Permite acesso web HTTP
 # -------------------------
 iptables -A INPUT -p tcp --dport 80 -m conntrack --ctstate NEW -j ACCEPT
 
 # -------------------------
 # Libera HTTPS (porta 443)
+# # Permite acesso web seguro
 # -------------------------
 iptables -A INPUT -p tcp --dport 443 -m conntrack --ctstate NEW -j ACCEPT
 
@@ -121,11 +131,13 @@ iptables -A INPUT -p tcp --dport 443 -m conntrack --ctstate NEW -j ACCEPT
 # Evita flood de logs
 # -------------------------
 iptables -A INPUT -m limit --limit 5/min -j LOG --log-prefix "IPTABLES DROP: " --log-level 4
+# Registra tentativas bloqueadas com limite de 5 por minuto
 
 echo "Regras aplicadas com sucesso."
 echo
 echo "Resumo das regras ativas:"
 iptables -L -n -v
+# Lista regras atuais, com detalhes
 
 echo
 echo "ATENÇÃO:"
@@ -134,3 +146,4 @@ echo "  sudo apt install iptables-persistent"
 echo "  sudo netfilter-persistent save"
 
 exit 0
+# Sai do script com sucesso
