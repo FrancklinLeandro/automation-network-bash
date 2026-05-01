@@ -102,6 +102,8 @@ automation-network-bash/
 │   └── nmap_network_scan.sh
 ├── inventory/
 │   └── switch-netbox.sh
+├── maintenance/
+│   └── backup_rotativo.sh
 ├── monitoring/
 │   └── bandwidth-usage-monitor.sh
 ├── security/
