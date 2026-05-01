@@ -84,6 +84,9 @@ Monitoramento de Access Points (ICMP)
 ### 📄 DHCP-leases.sh
 Análise de leases DHCP (IP, MAC, hostname)
 
+### 💾 backup_rotativo.sh
+Realiza backup automatizado de diretórios críticos com compressão (.tar.gz), rotação de arquivos antigos e registro detalhado em log
+
 ---
 
 ## 🗂️ Estrutura
